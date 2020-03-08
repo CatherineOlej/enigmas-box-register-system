@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Enigmas Box</title>
+    <link rel="icon" href="img/key-escape-icon.png" type="image/gif" sizes="16x16">
+    <!--jQuery-->
+    
+    <!--jQuery mobile css-->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="themes/Electric.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <!--jQuery validation library-->
+    <script src="js/lib/jquery.validate.js"></script>
+    <!--Scripts-->
+    <script src="js/database.js"></script>
+    <script src="js/enigmasBoxDAL.js"></script>
+    <script src="js/util.js"></script>
+    <script src="js/global.js"></script>
+    <script src="js/facade.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mystyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <!--HomePage-->
+    <div data-role="page" id="COHomePage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a" class="ui-btn-active
+                    ui-state-persist">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div align="center">
+		<br/>
+            <h1 style="color:#66FCF1;font-family:Monospace;">Experience Real Life Adventure</h1>
+        </div>
+		<br/>
+        <div class="container">
+            <img src="img/time.jpg" style="width:100%;height:50%;opacity: 0.5;">
+            <div class="text-block">
+                <h1>Ground breaking real world scenarios. Come experience something from your truest dreams as we await
+                    for your
+                    company!
+                </h1>
+            </div>
+        </div>
+        <div class="ui-body ui-body-a ui-corner-all">
+            <h2 style="color:#66FCF1;font-family:Monospace;text-align:center">About Us!</h2>
+            <p>Here at Enigmas Box we privide the most real and also the most challenging situation a group of people
+                can be
+                in. See the limits of your mind and the quickness of your brain. Each room that the group enters has a
+                chance
+                to define their own fantasy!</p>
+            <a href="#COEventsPage" data-theme="a" class="ui-btn ui-shadow">Enter the Osasis</a>
+            <h2 style="color:#66FCF1;font-family:Monospace;text-align:center">Upcoming Events!</h2>
+            <p>Don't miss out on this upcoming event. May 5th will be featuring three themes where family, teenages,
+                and adults
+                can take part in.Check out the Events page to learn more
+            </p>
+        </div>
+        <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+            <h4>&copy; 2019 Catherine Olejarczyk</h4>
+        </footer>
+    </div>
+
+    <!--Event page-->
+    <div data-role="page" id="COEventsPage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a" class="ui-btn-active
+                        ui-state-persist">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="ui-grid-a ui-responsive">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-a" style="height:75px;text-align:center"><br />
+                    <h2 style="font-size: 20px;">Upcoming Event: May 5th 2019</h2>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-a" style="height:75px;text-align:center"><br />
+                    <h2 style="font-size: 20px;">Themes: Star Wars, Disney, Sherlock Holmes</h2>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="ui-grid-b">
+            <div class="ui-block-a">
+                <div class="ui-bar ui-bar-a" style="text-align:center" id="selectTimeFamily">
+                    <table>
+                        <thead>
+                            <h2 style="text-align: center">Family Fun(All ages)</h2>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Time</th>
+                                <th>Slot:</th>
+                            </tr>
+                            <tr>
+                                <th>12:00 PM</th>
+                                <td><a href="" data-rel="external" style="color:red">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>12:45 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>1:30 PM</th>
+                                <td><a href="" style="color:red" data-rel="external">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>2:15 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>3:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>3:45 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>5:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-a" style="text-align:center" id="selectTimeTeen">
+                    <table>
+                        <thead>
+                            <h2 style="text-align: center">Teenage Escape(13-19)</h2>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Time</th>
+                                <th>Slot:</th>
+                            </tr>
+                            <tr>
+                                <th>12:00 PM</th>
+                                <td><a href="" data-rel="external" style="color:red">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>1:00 PM</th>
+                                <td><a href="" style="color:red" data-rel="external">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>2:00 PM</th>
+                                <td><a href="" style="color:red" data-rel="external">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>3:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>4:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>5:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>6:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="ui-block-b">
+                <div class="ui-bar ui-bar-a"  id="selectTimeAdult">
+                    <table>
+                        <thead>
+                            <h2 style="text-align: center">Adult Throwback(19+)</h2>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Time</th>
+                                <th>Slot:</th>
+                            </tr>
+                            <tr>
+                                <th>3:00 PM</th>
+                                <td><a href="" data-rel="external" style="color:red">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>4:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>5:00 PM</th>
+                                <td><a href="" style="color:red" data-rel="external">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>5:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>6:00 PM</th>
+                                <td><a href="" style="color:red" data-rel="external">Booked</a></td>
+                            </tr>
+                            <tr>
+                                <th>7:00 PM</th>
+                                <td><a href="#CORegisterPage" id="open">Open</a></td>
+                            </tr>
+                            <tr>
+                                <th>8:00 PM</th>
+                                <td><a href="" style="color:red" data-rel="external">Booked</a></td>
+                            </tr>
+                    </table>
+                </div>
+            </div>
+            <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+                <h4>&copy; 2019 Catherine Olejarczyk</h4>
+            </footer>
+        </div>
+    </div>
+
+    <!--Register Events page-->
+    <div data-role="page" id="CORegisterPage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a" class="ui-btn-active
+                        ui-state-persist">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <form class="cmxform" id="COAddGuest">
+                <label for="name">Full Name:</label>
+                <input type="text" name="AddFullName" id="AddFullName">
+                <label for="email">Register Email:</label>
+                <input type="email" name="AddEmail" id="AddEmail">
+                <label for="phone">Phone Number:</label>
+                <input type="text" name="AddPhone" id="AddPhone">
+
+                <select name="AddThemes" id="AddThemes" data-role="select-native-1">
+                    <option value="1">Disney</option>
+                    <option value="2">Star Wars</option>
+                    <option value="3">Sherlock Holmes</option>
+                </select>
+
+                <fieldset data-role="controlgroup" data-type="horizontal" id="hasGuests">
+                    <legend>Number of people:</legend>
+
+                    <input type="radio" id="add2" name="radAddFriend" data-theme="a" data-iconpos="left">
+                    <label for="add2">Two</label>
+
+                    <input type="radio" id="add3" name="radAddFriend" data-theme="a" data-iconpos="left">
+                    <label for="add3">Three</label>
+
+                    <input type="radio" id="add4" name="radAddFriend" data-theme="a" data-iconpos="left">
+                    <label for="add4">Four</label>
+
+                    <input type="radio" id="add5" name="radAddFriend" data-theme="a" data-iconpos="left">
+                    <label for="add5">Five</label>
+
+                    <input type="radio" id="add6" name="radAddFriend" data-theme="a" data-iconpos="left">
+                    <label for="add6">Six</label>
+                </fieldset>
+
+                <label for="date">Date registered:</label>
+                <input type="date" name="AddDate" id="AddDate">
+                <button id="btnSubmit">Submit</button>
+            </form>
+        </section>
+
+        <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+            <h4>&copy; 2019 Catherine Olejarczyk</h4>
+        </footer>
+    </div>
+
+    <!--View Events page-->
+    <div data-role="page" id="COViewEventsPage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a" class="ui-btn-active
+                            ui-state-persist">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <ul id="COEventList" data-role="listview" class="ui-listview-inset">
+                <li><a href="#COEditEventsPage" data-theme="a"></a>
+                </li>
+            </ul>
+        </section>
+        <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+            <h4>&copy; 2019 Catherine Olejarczyk</h4>
+        </footer>
+    </div>
+
+    <!--Edit Events page-->
+    <div data-role="page" id="COEditEventsPage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a" class="ui-btn-active
+                            ui-state-persist">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <form class="cmxform" id="COEditGuest">
+                <label for="name">Full Name:</label>
+                <input type="text" name="EditFullName" id="EditFullName">
+                <label for="email">Review Email:</label>
+                <input type="email" name="EditEmail" id="EditEmail">
+                <label for="phone">Phone Number:</label>
+                <input type="number" name="EditPhone" id="EditPhone">
+                <label>Themes:</label>
+                <select name="EditThemes" id="EditThemes" data-role="select-native-1">
+                    <option value="1">Disney</option>
+                    <option value="2">Star Wars</option>
+                    <option value="3">Sherlock Holmes</option>
+                </select>
+                <fieldset data-role="controlgroup" data-type="horizontal" id="EditGuest">
+                    <legend>Number of people:</legend>
+                    <input type="radio" id="edit2" name="radEditFriend" data-theme="a" data-iconpos="left">
+                    <label for="edit2">Two</label>
+
+                    <input type="radio" id="edit3" name="radEditFriend" data-theme="a" data-iconpos="left">
+                    <label for="edit3">Three</label>
+
+                    <input type="radio" id="edit4" name="radEditFriend" data-theme="a" data-iconpos="left">
+                    <label for="edit4">Four</label>
+
+                    <input type="radio" id="edit5" name="radEditFriend" data-theme="a" data-iconpos="left">
+                    <label for="edit5">Five</label>
+
+                    <input type="radio" id="edit6" name="radEditFriend" data-theme="a" data-iconpos="left">
+                    <label for="edit6">Six</label>
+                </fieldset>
+                
+                <label for="date">Review Date:</label>
+                <input class="required" type="date" name="EditDate" id="EditDate">
+                
+            </form>
+            <fieldset data-role="controlgroup" data-type="horizontal">
+                <button id="btnCancel">Cancel</button>
+                <button id="btnUpdate">Update</button>
+                <button id="btnDelete">Delete</button>
+            </fieldset>
+        </section>
+
+        <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+            <h4>&copy; 2019 Catherine Olejarczyk</h4>
+        </footer>
+    </div>
+
+    <!--About page-->
+    <div data-role="page" id="COAboutPage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a" class="ui-btn-active
+                            ui-state-persist">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <h1 style="color:#66FCF1;font-family:Monospace;"><img src="img/CO-icon.png" width="30px" alt="icon">
+                Catherine Olejarczyk's Final Project <img src="img/CO-icon.png" width="30px" alt="icon"></h1>
+            <p>PROG3185: Prgraming Mobile Applications I</p>
+            <p>Teacher: Yash Shah</p>
+            <p>Due Date: April 14, 2019</p>
+			<p>Description: The goal of this project is to design, develop, and implement a Mobile Web Application </p>
+
+            <a href="mailto:colejarczyk6866@conestogac.on.ca" data-icon="plus" data-role="button" data-theme="a">colejarczyk6866@conestogac.on.ca</a>
+            <p>Website:</p>
+            <a href="https://www.conestogac.on.ca/" data-icon="plus" data-role="button" data-theme="a">Conestoga
+                College</a>
+        </section>
+        <footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+            <h4>&copy; 2019 Catherine Olejarczyk</h4>
+        </footer>
+    </div>
+
+    <!--Settings Page-->S
+    <div data-role="page" id="COSettingsPage">
+        <header data-role="header" data-position="fixed" style="text-shadow: none;">
+            <h2>Enigmas Box</h2>
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#COHomePage" data-icon="home" data-theme="a">Home</a>
+                    </li>
+                    <li><a href="#COEventsPage" data-icon="calendar" data-theme="a">Events</a>
+                    </li>
+                    <li><a href="#COViewEventsPage" data-icon="eye" data-theme="a">Reserve</a>
+                    </li>
+                    <li><a href="#COAboutPage" data-icon="info" data-theme="a">About</a>
+                    </li>
+                    <li><a href="#COSettingsPage" data-icon="gear" data-theme="a" class="ui-btn-active
+                        ui-state-persist">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <form>
+                <label for="text-basic">Default Email:</label>
+                <input type="email" name="email" id="RegisterEmail">
+                <button id="saveDefaults" onclick="save()" type="submit">Save
+                    Defaults</button>
+                <button id="btnClearDB">Clear
+                    Database</button>
+            </form>
+            <script>
+                function save() {
+                    alert("Default reviewer email saved.");
+                    var inputEmail = document.getElementById("COReviewEmail");
+                    localStorage.setItem("DefaultEmail", inputEmail.value);
+                }
+            </script>
+        </section>
+		<footer data-role="footer" data-position="fixed" style="text-shadow: none;">
+                <h4>&copy; 2019 Catherine Olejarczyk</h4>
+            </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+
+  .container {
+    position: relative;
+    font-family: Monospace;
+  }
+  .text-block {
+    position: absolute;
+    bottom: 80px;
+    right: 270;
+    text-align: center;
+    color: #66FCF1;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+table {
+    border-collapse: separate;
+    
+  }
+
+  
+label.error{
+    color: red;
+    font-weight: bold;
+}
