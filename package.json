@@ -1,0 +1,19 @@
+{
+  "name": "continuous-integration",
+  "version": "1.0.0",
+  "description": "Web application with intergrated Web SQL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CatherineOlej/Enigmas-box-register-system.git"
+  },
+  "author": "Catherine Olejarczyk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CatherineOlej/Enigmas-box-register-system/issues"
+  },
+  "homepage": "https://github.com/CatherineOlej/Enigmas-box-register-system#readme"
+}
