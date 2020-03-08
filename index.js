@@ -1,16 +1,9 @@
-import http from 'http';
-import express from "express";
-let app = express();
+var express = require('express');
+var app = express();
 
-app.use(express.static(__dirname + "/wwww"));
+app.use(express.static(__dirname + '/www'));
 
-let aUrls = [
-    "/www/",
-];
+var port = process.env.PORT || 3000;
 
-// Create http server that leverages reverse proxy instance
-// and proxy rules to proxy requests to different targets
-http.createServer(app)
-.listen(app.get('port'), function () {
-  console.log('app listening on port ' + app.get('port') + "! Go to https://localhost:" + app.get('port') + "/")
-});
+app.listen(port);
+console.log('working on port ' + port);
